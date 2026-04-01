@@ -58,7 +58,7 @@ const TechnologySection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-card p-6 rounded-xl shadow-card border border-border"
+            className="bg-card p-6 rounded-xl shadow-card border border-border card-hover"
           >
             <tech.icon className="w-8 h-8 text-primary mb-4" />
             <h3 className="font-heading font-semibold text-lg mb-2">{tech.title}</h3>

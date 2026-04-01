@@ -14,7 +14,7 @@ const TeamCard = ({ image, name, bio, quote, index }: TeamCardProps) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.15 }}
-    className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-border"
+    className="bg-card rounded-lg overflow-hidden shadow-md border border-border h-full flex flex-col card-hover"
   >
     {/* Image Container with Hover Zoom */}
     <div className="aspect-square overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
@@ -26,7 +26,7 @@ const TeamCard = ({ image, name, bio, quote, index }: TeamCardProps) => (
     </div>
 
     {/* Content */}
-    <div className="p-5">
+    <div className="p-5 flex flex-col flex-grow">
       <h3 className="font-heading font-bold text-lg mb-2">{name}</h3>
       <p className="text-xs font-medium text-primary mb-4 uppercase tracking-wide">Dentist</p>
       <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">{bio}</p>

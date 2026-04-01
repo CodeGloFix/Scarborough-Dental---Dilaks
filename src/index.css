@@ -85,6 +85,17 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+    scroll-margin-top: 5rem;
+  }
+
+  section {
+    scroll-margin-top: 5rem;
+  }
+
+  @media (max-width: 768px) {
+    h1, h2, h3, h4, h5, h6, section {
+      scroll-margin-top: 4rem;
+    }
   }
 }
 
@@ -122,5 +133,23 @@
   }
   .shadow-elevated {
     box-shadow: var(--shadow-elevated);
+  }
+
+  /* Custom Animations */
+  @keyframes hero-zoom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  .animate-hero-zoom {
+    animation: hero-zoom 20s ease-in-out infinite;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out cursor-pointer;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1.5 scale-[1.03] shadow-elevated border-primary/20 z-10;
   }
 }

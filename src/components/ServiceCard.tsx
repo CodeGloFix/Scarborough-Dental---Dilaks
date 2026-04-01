@@ -14,7 +14,7 @@ const ServiceCard = ({ icon: Icon, title, description, index }: ServiceCardProps
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="group bg-card rounded-xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 border border-border hover:border-primary/20"
+    className="group bg-card rounded-xl p-6 border border-border shadow-card card-hover"
   >
     <div className="w-12 h-12 rounded-xl bg-dental-sky flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
       <Icon className="w-6 h-6 text-primary" />

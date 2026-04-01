@@ -2,8 +2,8 @@ import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import TeamCard from "@/components/TeamCard";
 import TechnologySection from "@/components/TechnologySection";
+import TeamCarousel from "@/components/TeamCarousel";
 import CTASection from "@/components/CTASection";
-import MovingImageCarousel from "@/components/MovingImageCarousel";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -104,7 +104,7 @@ const Index = () => (
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyChoose.map((item, i) => (
-            <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center p-6">
+            <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center p-6 bg-card rounded-xl border border-border shadow-card card-hover">
               <div className="w-14 h-14 rounded-full bg-dental-sky flex items-center justify-center mx-auto mb-4">
                 <item.icon className="w-7 h-7 text-primary" />
               </div>
@@ -116,25 +116,16 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Team Preview - Moving Carousel */}
-    <section className="py-20 bg-dental-warm">
-      <MovingImageCarousel
-        images={teamPreview.map(doc => ({
-          src: doc.image,
-          alt: doc.name,
-        }))}
-        title="Meet Your Dentists"
-        description="Dedicated professionals committed to your dental health and comfort."
-        autoplayDuration={50}
-      />
-    </section>
 
-    {/* Team Details Grid */}
-    <section className="py-12">
+
+    {/* Team Details Carousel */}
+    <section className="py-20 bg-dental-warm">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {teamPreview.map((doc, i) => <TeamCard key={doc.name} {...doc} index={i} />)}
+        <div className="text-center mb-12">
+          <span className="text-primary font-medium text-sm uppercase tracking-wider">Meet Our Team</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">Expert Dental Professionals</h2>
         </div>
+        <TeamCarousel team={teamPreview} />
       </div>
     </section>
 
