@@ -14,15 +14,23 @@ const TeamCard = ({ image, name, bio, quote, index }: TeamCardProps) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.15 }}
-    className="bg-card rounded-xl overflow-hidden shadow-card border border-border"
+    className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-border"
   >
-    <div className="aspect-[4/5] overflow-hidden">
-      <img src={image} alt={name} className="w-full h-full object-cover" />
+    {/* Image Container with Hover Zoom */}
+    <div className="aspect-square overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+      <img
+        src={image}
+        alt={name}
+        className="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105"
+      />
     </div>
-    <div className="p-6">
-      <h3 className="font-heading font-bold text-xl mb-1">{name}</h3>
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-4">{bio}</p>
-      <blockquote className="text-sm italic text-primary border-l-2 border-primary pl-4">
+
+    {/* Content */}
+    <div className="p-5">
+      <h3 className="font-heading font-bold text-lg mb-2">{name}</h3>
+      <p className="text-xs font-medium text-primary mb-4 uppercase tracking-wide">Dentist</p>
+      <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">{bio}</p>
+      <blockquote className="text-xs italic text-primary border-l-2 border-primary pl-3">
         "{quote}"
       </blockquote>
     </div>

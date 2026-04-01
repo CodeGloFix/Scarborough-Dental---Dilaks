@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
 import CTASection from "@/components/CTASection";
-import AboutImageCarousel from "@/components/AboutImageCarousel";
 import { motion } from "framer-motion";
 
 import doctor1 from "@/assets/doctor-1.jpg";
@@ -54,7 +53,7 @@ const AboutPage = () => (
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((doc, i) => (
               <TeamCard key={doc.name} {...doc} index={i} />
             ))}
@@ -70,18 +69,6 @@ const AboutPage = () => (
               For over four decades, Scarborough Dental has been a cornerstone of dental care in the Scarborough community. Our practice was built on the belief that every patient deserves high-quality, compassionate dental care. From our humble beginnings to our modern, technology-driven practice, our commitment to your oral health has never wavered. We're proud to serve multiple generations of families — and we look forward to welcoming yours.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="font-heading text-3xl font-bold mb-4 text-center">Our Clinic</h2>
-            <p className="text-muted-foreground text-center text-lg mb-8 max-w-2xl mx-auto">
-              Experience our state-of-the-art facility designed with patient comfort in mind.
-            </p>
-          </motion.div>
-          <AboutImageCarousel />
         </div>
       </section>
     </div>
