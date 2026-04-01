@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -18,13 +19,15 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-lg border-b border-white/20 shadow-sm">
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-heading font-bold text-sm">SD</span>
+        <Link to="/" className="flex items-center gap-2 relative z-[60] group h-full">
+          <div className="logo-container bg-transparent backdrop-blur-none flex items-center h-full py-1">
+            <img 
+              src={logo} 
+              alt="Official stacked Scarborough Dental Logo" 
+              className="h-full w-auto object-contain brightness-100 contrast-100 drop-shadow-sm select-none"
+              draggable="false"
+            />
           </div>
-          <span className="font-heading font-bold text-lg text-dental-navy">
-            Scarborough <span className="text-primary">Dental</span>
-          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
