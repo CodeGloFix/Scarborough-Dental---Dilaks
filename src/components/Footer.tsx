@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, FileText } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const Footer = () => (
   <footer className="bg-dental-navy text-primary-foreground">
@@ -7,10 +8,14 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-sm">SD</span>
+            <div className="w-40 h-20">
+              <img
+                src={logo}
+                alt="Scarborough Dental Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
-            <span className="font-heading font-bold text-lg">Scarborough Dental</span>
+
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
             Family & Cosmetic Dentistry serving Scarborough and the GTA for over 40 years. Your smile is our priority.
