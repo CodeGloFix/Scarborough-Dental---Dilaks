@@ -69,7 +69,7 @@ export default function AboutImageCarousel() {
           {displayImages.map((image, index) => (
             <div
               key={`${index}-${image.alt}`}
-              className="carousel-item relative"
+              className={`carousel-item relative ${hoveredIndex === index ? 'hovered' : ''}`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -78,9 +78,7 @@ export default function AboutImageCarousel() {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className={`w-full h-full object-cover ${
-                    hoveredIndex === index ? 'hovered' : ''
-                  }`}
+                  className="w-full h-full object-cover"
                 />
                 {/* Overlay gradient for better visual hierarchy */}
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20 pointer-events-none" />
