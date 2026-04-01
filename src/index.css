@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 214 100% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 25% 15%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 10% 50%;
+
+    --accent: 210 40% 94%;
+    --accent-foreground: 215 25% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 214 100% 58%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --dental-blue: 214 100% 58%;
+    --dental-blue-dark: 214 100% 45%;
+    --dental-navy: 215 50% 18%;
+    --dental-sky: 210 100% 96%;
+    --dental-mint: 160 40% 94%;
+    --dental-warm: 30 30% 97%;
+
+    --font-heading: 'DM Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --shadow-soft: 0 2px 20px -4px hsl(214 100% 58% / 0.12);
+    --shadow-card: 0 4px 30px -8px hsl(215 25% 15% / 0.08);
+    --shadow-elevated: 0 12px 40px -12px hsl(215 25% 15% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--dental-blue)), hsl(var(--dental-blue-dark)));
+  }
+  .bg-dental-sky {
+    background-color: hsl(var(--dental-sky));
+  }
+  .bg-dental-warm {
+    background-color: hsl(var(--dental-warm));
+  }
+  .bg-dental-mint {
+    background-color: hsl(var(--dental-mint));
+  }
+  .bg-dental-navy {
+    background-color: hsl(var(--dental-navy));
+  }
+  .text-dental-navy {
+    color: hsl(var(--dental-navy));
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+}
