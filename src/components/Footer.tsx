@@ -73,7 +73,15 @@ const Footer = () => (
             © {new Date().getFullYear()} Scarborough Dental. All rights reserved.
           </p>
           <p className="text-sm opacity-70">
-            Created by <span className="opacity-100 font-medium">CodeGloFix (Pvt) Ltd.</span>
+            Created by{" "}
+            <a
+              href="https://www.codeglofix.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-100 font-medium hover:underline"
+            >
+              CodeGloFix (Pvt) Ltd.
+            </a>
           </p>
         </div>
       </div>
