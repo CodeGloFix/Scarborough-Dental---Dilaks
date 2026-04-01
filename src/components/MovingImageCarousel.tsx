@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import '../styles/carousel.css'; // Import CSS file
+import '../styles/carousel.css';
 
 interface CarouselImage {
   src: string;
@@ -26,7 +26,7 @@ export default function MovingImageCarousel({
   const displayImages = [...images, ...images];
 
   return (
-    <section className="w-full py-16 md:py-20 overflow-hidden">
+    <section className="w-full py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         {(title || description) && (
@@ -49,31 +49,31 @@ export default function MovingImageCarousel({
           </motion.div>
         )}
 
-        {/* Carousel */}
+        {/* Carousel Container */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="carousel-container overflow-hidden"
+          className="carousel-container"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <div
-            className={`carousel-track flex gap-4 md:gap-6`}
+            className={`carousel-track ${isHovered ? 'paused' : ''}`}
             style={{
-              animation: `scroll-left ${autoplayDuration}s linear infinite`,
-              animationPlayState: isHovered ? 'paused' : 'running',
-            }}
+              // Use CSS variable for animation duration
+              '--animation-duration': `${autoplayDuration}s`,
+            } as React.CSSProperties & { '--animation-duration': string }}
           >
             {displayImages.map((image, index) => (
               <div
                 key={`${index}-${image.alt}`}
-                className="carousel-item flex-shrink-0 rounded-lg overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md hover:shadow-lg transition-shadow"
+                className="carousel-item rounded-lg overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-md hover:shadow-xl transition-all duration-300"
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="carousel-image w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="carousel-image transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                 />
               </div>
@@ -83,8 +83,8 @@ export default function MovingImageCarousel({
 
         {/* Info Text */}
         <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground animate-pulse">
-            ✨ Hover to pause • Smooth infinite scroll • Premium animations
+          <p className="text-sm text-muted-foreground">
+            ✨ Hover to pause animation • Smooth infinite scroll
           </p>
         </div>
       </div>

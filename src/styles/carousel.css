@@ -9,33 +9,57 @@
 
 .carousel-container {
   overflow: hidden;
+  width: 100%;
 }
 
 .carousel-track {
-  animation-timing-function: linear;
+  display: flex;
+  gap: 1rem;
+  will-change: transform;
+  width: fit-content;
+
+  /* Use the default duration, will be overridden by inline style */
+  animation: scroll-left 50s linear infinite;
 }
 
-/* Mobile: show 1-2 images */
+/* Pause animation on hover */
+.carousel-track.paused {
+  animation-play-state: paused;
+}
+
 @media (max-width: 640px) {
+  .carousel-track {
+    gap: 0.75rem;
+  }
+
   .carousel-item {
-    width: calc((100vw - 2rem) / 1.5);
-    height: 250px;
+    width: 280px;
+    height: 240px;
+    flex-shrink: 0;
   }
 }
 
-/* Tablet: show 2-3 images */
 @media (min-width: 641px) and (max-width: 1024px) {
+  .carousel-track {
+    gap: 1rem;
+  }
+
   .carousel-item {
-    width: calc((100vw - 3rem) / 2.5);
+    width: 320px;
     height: 280px;
+    flex-shrink: 0;
   }
 }
 
-/* Desktop: show 4 images */
 @media (min-width: 1025px) {
+  .carousel-track {
+    gap: 1.5rem;
+  }
+
   .carousel-item {
-    width: calc((100vw - 4rem) / 4);
+    width: 360px;
     height: 300px;
+    flex-shrink: 0;
   }
 }
 
@@ -43,4 +67,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
+
+
