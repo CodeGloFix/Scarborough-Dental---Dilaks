@@ -1,4 +1,4 @@
-const PHONE_NUMBER = "(1416) 439-6776"; // Replace with your actual WhatsApp number (no +, spaces, or dashes)
+const PHONE_NUMBER = "(416) 439-6776"; // Replace with your actual WhatsApp number (no +, spaces, or dashes)
 const PRE_FILLED_MESSAGE = "Hello, I would like to book a dental appointment.";
 
 const WhatsAppButton = () => {
