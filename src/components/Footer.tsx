@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, FileText } from "lucide-react";
 const Footer = () => (
   <footer className="bg-dental-navy text-primary-foreground">
     <div className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         <div>
           <div className="flex items-center gap-2 mb-4">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
@@ -66,10 +66,16 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center">
-        <p className="text-sm opacity-50">
-          © {new Date().getFullYear()} Scarborough Dental. All rights reserved.
-        </p>
+      {/* Footer Bottom - Copyright & Credit */}
+      <div className="border-t border-primary-foreground/10 pt-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm opacity-70">
+            © {new Date().getFullYear()} Scarborough Dental. All rights reserved.
+          </p>
+          <p className="text-sm opacity-70">
+            Created by <span className="opacity-100 font-medium">CodeGloFix (Pvt) Ltd.</span>
+          </p>
+        </div>
       </div>
     </div>
   </footer>

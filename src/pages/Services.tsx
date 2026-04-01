@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
 import {
@@ -38,9 +36,8 @@ const cosmeticServices = [
 ];
 
 const ServicesPage = () => (
-  <div className="min-h-screen">
-    <Navbar />
-    <div className="pt-20 md:pt-24">
+  <>
+    <div className="pt-16 md:pt-20">
       {/* Header */}
       <section className="py-16 bg-dental-sky">
         <div className="container mx-auto px-4 text-center">
@@ -123,8 +120,7 @@ const ServicesPage = () => (
       </section>
     </div>
     <CTASection />
-    <Footer />
-  </div>
+  </>
 );
 
 export default ServicesPage;

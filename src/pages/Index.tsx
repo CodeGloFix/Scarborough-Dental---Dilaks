@@ -1,10 +1,8 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import TeamCard from "@/components/TeamCard";
 import TechnologySection from "@/components/TechnologySection";
 import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
 import MovingImageCarousel from "@/components/MovingImageCarousel";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -58,8 +56,7 @@ const whyChoose = [
 ];
 
 const Index = () => (
-  <div className="min-h-screen">
-    <Navbar />
+  <div>
     <Hero />
 
     {/* About Intro */}
@@ -166,8 +163,6 @@ const Index = () => (
         </div>
       </div>
     </section>
-
-    <Footer />
   </div>
 );
 

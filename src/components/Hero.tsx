@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-dental.jpg";
 
 const Hero = () => (
-  <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+  <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-16 md:pt-20">
     <div className="absolute inset-0">
       <img src={heroImage} alt="Modern dental clinic interior" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-r from-dental-navy/90 via-dental-navy/70 to-dental-navy/30" />

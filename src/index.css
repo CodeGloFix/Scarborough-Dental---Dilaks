@@ -63,6 +63,18 @@
 }
 
 @layer base {
+  html {
+    @apply h-full;
+  }
+
+  body {
+    @apply h-full;
+  }
+
+  #root {
+    @apply h-full;
+  }
+
   * {
     @apply border-border;
   }
